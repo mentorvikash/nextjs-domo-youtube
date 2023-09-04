@@ -1,17 +1,26 @@
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/router";
 
-function Profile({ blogid = 100 }) {
+function Profile() {
+  const router = useRouter()
+
+
+  const handleSubmit = () => {
+    let isSuccess = false
+    if (isSuccess) {
+      router.push("./")
+    }
+  }
+
   return (
     <>
       <div>Profile page</div>
-      <Link href="/blog/1" >blog 1</Link>
-      <Link href="/blog/2" >blog 2</Link>
-      <Link href="/blog/3" replace >blog 3</Link>
-      <Link href={`/blog/${blogid}`}>blog {blogid}</Link >
-      <Link href="/" >Back</Link>
+      <Link href="/blog/12" >blog12</Link>
+      <Link href="/blog/13" >blog13</Link>
+      <Link href="/">Back</Link>
+      <button onClick={handleSubmit} >Submit</button>
     </>
   )
 }
-
 export default Profile;

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function NotFoundPage() {
+function Error() {
     return (
-        <h1>No page Found for this page </h1>
+        <div>This page not found | Revive Coding.</div>
     )
 }
 
-export default NotFoundPage
+export default Error
