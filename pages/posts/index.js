@@ -1,33 +1,43 @@
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
 
-function PostList({ postdata }) {
+function index({ posts }) {
+
     return (
-        <div>
-            <h1>PostList</h1>
-            {
-                postdata && postdata.map(post => {
-                    return (
-                        <div key={post.id}>
-                            <Link href={`posts/${post.id}`} >
-                                <h3>{post.title}</h3>
-                            </Link>
-                        </div>
-                    )
-                })
-            }
-        </div>
+        <>
+            <h1>Master</h1>
+
+            <div>
+                {
+                    posts?.map((post, index) => {
+                        return (
+                            <>
+                                <h2 key={index}>
+                                    <Link href={`/posts/${post.id}`} passHref >
+                                        {post.title}
+                                    </Link>
+                                </h2>
+                                <hr />
+                            </>
+                        )
+                    })
+                }
+            </div>
+        </>
     )
 }
 
-export default PostList
+export default index
 
 export async function getStaticProps() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
-    const postdata = await response.json()
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
+
+    const data = await response.json()
+
     return {
         props: {
-            postdata: postdata.slice(0, 3)
+            posts: data
         }
     }
 }

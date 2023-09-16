@@ -1,43 +1,56 @@
 import React from 'react'
 
-function SinglePost({ user }) {
+function Index({ post }) {
+
     return (
         <div>
-            <h2>{user.title}</h2>
-            <h6>{user.body}</h6>
+            <h1>{post.title}</h1>
+            <p>{post.body}</p>
         </div>
     )
+
 }
 
-export default SinglePost
+export default Index
 
-export const getStaticPaths = (path) => {
+export const getStaticPaths = async () => {
+
+    // const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+
+    // const data = await response.json()
+
+    // const paths = data.map((post) => {
+    //     return {
+    //         params: {
+    //             postid: `${post.id}`
+    //         }
+    //     }
+    // })
+
 
     return {
         paths: [
-            {
-                params: { postid: "1" }
-            },
-            {
-                params: { postid: "2" }
-            },
-            {
-                params: { postid: "3" }
-            }
+            { params: { postid: "1" } },
+            { params: { postid: "2" } },
+            { params: { postid: "3" } },
+            // { params: { postid: "4" } },
+            // { params: { postid: "5" } },
         ],
-        fallback: false,
+        // paths: paths,
+        fallback: "blocking"
     }
 }
 
-export async function getStaticProps(context) {
-    const { params } = context
-    console.log({ params })
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postid}`)
-    const user = await response.json()
 
+export const getStaticProps = async (context) => {
+
+    const { params } = context
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postid}`)
+
+    const data = await response.json()
     return {
         props: {
-            user: user,
+            post: data
         }
     }
 }
