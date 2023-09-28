@@ -1,11 +1,19 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
-function Index({ post }) {
+function Index({ product }) {
+
+    const router = useRouter()
+
+    if (router.isFallback) {
+        return <h2>Loding....</h2>
+    }
 
     return (
         <div>
-            <h1>{post.title}</h1>
-            <p>{post.body}</p>
+            <h1>{product.title}</h1>
+            <h3>{product.price}</h3>
+            <p>{product.category}</p>
         </div>
     )
 
@@ -33,11 +41,8 @@ export const getStaticPaths = async () => {
             { params: { postid: "1" } },
             { params: { postid: "2" } },
             { params: { postid: "3" } },
-            // { params: { postid: "4" } },
-            // { params: { postid: "5" } },
         ],
-        // paths: paths,
-        fallback: "blocking"
+        fallback: true
     }
 }
 
@@ -45,12 +50,14 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
 
     const { params } = context
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postid}`)
+    const response = await fetch(`http://localhost:4000/products/${params.postid}`)
 
     const data = await response.json()
     return {
         props: {
-            post: data
-        }
+            product: data
+        },
+        revalidate: 30,
+
     }
 }

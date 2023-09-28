@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-function index({ posts }) {
+function index({ products }) {
 
     return (
         <>
@@ -9,15 +9,17 @@ function index({ posts }) {
 
             <div>
                 {
-                    posts?.map((post, index) => {
+                    products?.map((product, index) => {
                         return (
                             <>
-                                <h2 key={index}>
-                                    <Link href={`/posts/${post.id}`} passHref >
-                                        {post.title}
-                                    </Link>
-                                </h2>
-                                <hr />
+                                <div key={index}>
+                                    <h2 >
+                                        <Link href={`/posts/${product.id}`} passHref >
+                                            {product.title + " " + product.price}
+                                        </Link>
+                                    </h2>
+                                </div>
+
                             </>
                         )
                     })
@@ -31,13 +33,13 @@ export default index
 
 export async function getStaticProps() {
 
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
+    const response = await fetch("http://localhost:4000/products")
 
     const data = await response.json()
 
     return {
         props: {
-            posts: data
+            products: data
         }
     }
 }
