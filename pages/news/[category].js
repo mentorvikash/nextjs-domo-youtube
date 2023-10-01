@@ -5,8 +5,8 @@ function Category({ newslist, category }) {
         <>
             <h1>List of news from {category} category  </h1>
             {
-                newslist.map(news => <>
-                    <h3>{news.title}</h3>
+                newslist.map((news, index) => <>
+                    <h3 key={index}>{news.title}</h3>
                 </>)
             }
 
@@ -19,7 +19,11 @@ export default Category
 // successful implemented server side rendering with next js
 export const getServerSideProps = async (context) => {
     // destructure to get params value
-    const { category } = context.params
+    const { req, res, params } = context
+    const { category } = params
+
+    res.setHeader('Set-cookie', ['name=rccoding'])
+
     const response = await fetch(`http://localhost:4000/news?category=${category}`)
     const newslist = await response.json()
 
