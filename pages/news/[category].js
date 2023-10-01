@@ -19,7 +19,7 @@ export default Category
 // successful implemented server side rendering with next js
 export const getServerSideProps = async (context) => {
     // destructure to get params value
-    const { req, res, params } = context
+    const { req, res, params, query } = context
     const { category } = params
 
     res.setHeader('Set-cookie', ['name=rccoding'])
