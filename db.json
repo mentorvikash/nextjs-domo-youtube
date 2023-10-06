@@ -1,0 +1,73 @@
+{
+  "dashboard": {
+    "numberOfPosts": 50000,
+    "numberOfLikes": 1200,
+    "numberOfComments": 350,
+    "impressions": 5000,
+    "views": 7500,
+    "followersCount": 2500,
+    "friendsCount": 300000
+  },
+  "news": [
+    {
+      "id": 1,
+      "title": "Latest Developments in Politics",
+      "body": "Recent political developments have sparked discussions and debates around the world. Leaders and policymakers are addressing critical issues affecting nations.",
+      "category": "politics"
+    },
+    {
+      "id": 2,
+      "title": "Sports Highlights",
+      "body": "The world of sports witnessed remarkable achievements and exciting moments throughout the year. Athletes from various disciplines made headlines with their performances.",
+      "category": "sports"
+    },
+    {
+      "id": 3,
+      "title": "Advancements in Technology",
+      "body": "Technological advancements continue to shape our lives. Innovations in AI, robotics, and digital technology are transforming industries and daily routines.",
+      "category": "technology"
+    },
+    {
+      "id": 4,
+      "title": "Global Politics and Diplomacy",
+      "body": "Global politics and diplomacy play a crucial role in international relations. Diplomatic efforts and negotiations influence geopolitical outcomes and global stability.",
+      "category": "politics"
+    },
+    {
+      "id": 5,
+      "title": " and Records",
+      "body": "Sports enthusiasts celebrated championship victories and the breaking of records in various athletic events. Athletes achieved new heights in their respective sports.",
+      "category": "sports"
+    },
+    {
+      "id": 6,
+      "title": "Innovations in Tech Gadgets",
+      "body": "Consumers witnessed the release of innovative tech gadgets that promise enhanced convenience and productivity. Smart devices and wearable technology are on the rise.",
+      "category": "technology"
+    },
+    {
+      "id": 7,
+      "title": "Political Debates and Elections",
+      "body": "Political debates and elections captured the attention of citizens as they participated in democratic processes. Candidates and their campaigns faced scrutiny from the public.",
+      "category": "politics"
+    },
+    {
+      "id": 8,
+      "title": "Sports Teams and Competitions",
+      "body": "Sports teams from around the world competed in various competitions, showcasing their skills and determination. Fans cheered for their favorite teams and athletes.",
+      "category": "sports"
+    },
+    {
+      "id": 9,
+      "title": "Tech Startups and Innovation",
+      "body": "Tech startups continued to drive innovation with groundbreaking ideas and solutions. Entrepreneurship in the technology sector saw significant growth and investment.",
+      "category": "technology"
+    },
+    {
+      "id": 10,
+      "title": "Political Developments in Foreign Relations",
+      "body": "Foreign relations and diplomacy played a pivotal role in shaping international events. Nations engaged in discussions and negotiations to address global challenges.",
+      "category": "politics"
+    }
+  ]
+}
