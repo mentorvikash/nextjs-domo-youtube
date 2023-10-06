@@ -18,8 +18,10 @@ This is next.js tutorial and to what we had convered in different days, you can 
 
 ## Branches
 
-- day1-Swr-rendering => implement basic data fetching with SWR
+#### day1-Swr-rendering
 
-- day2-client-side+server-side-rendering
+- Implement basic data fetching with SWR
 
-#### will see how implement server side rendering with client side rendering.
+#### day2-client-side+server-side-rendering
+
+- Will see how implement server side rendering with client side rendering.
