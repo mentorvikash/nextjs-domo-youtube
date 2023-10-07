@@ -29,6 +29,23 @@ function Index() {
 
         const data = response.json();
         console.log(data)
+
+    }
+
+    // delete Function
+
+    async function handleDelete(id) {
+        // create a delete request
+        const response = await fetch(`http://localhost:3000/api/comments/${id}`, {
+            method: 'DELETE',
+        })
+        const data = await response.json()
+
+        if (data.success) {
+            // alert("successfully deleted")
+            // we call this to get updated record of commmet after commnet successfully deleted
+            getAllComments()
+        }
     }
 
     return (
@@ -43,7 +60,8 @@ function Index() {
                 // Render comments here | lets only render comments
                 comments && comments.map((comment, index) => {
                     return (
-                        <div key={index}>
+                        <div style={{ display: "flex" }} key={index}>
+                            <button onClick={() => handleDelete(comment.id)} >Delete</button>
                             <h4>comment {index}: {comment.body}</h4>
                         </div>
                     )
@@ -55,3 +73,16 @@ function Index() {
 }
 
 export default Index
+
+
+
+
+// lets implement this to our UI With a delete button
+// add a delete button before each comment
+// add the delete Function
+// now lets test our UI and fix error if any
+// that means our fucntion not work properly 
+// lets fix this issue
+
+// Let's Create a Catch all routes
+// all parameters can be caught in one file lets see how?
