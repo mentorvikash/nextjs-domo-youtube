@@ -86,3 +86,6 @@ export default Index
 
 // Let's Create a Catch all routes
 // all parameters can be caught in one file lets see how?
+
+// Let's create a seperate page to access individual comments data.
+// But we will pre render the data by using getstaticprops
