@@ -4,4 +4,5 @@ export default function getalltodo(req, res) {
 }
 
 // that is how can create api in next
-// now lets see how to create api for Get, POST, PUT and DELETE
+// now lets see how to create api for Get, POST, PUT and DELETE pages/api/dashboard.js
+// lets crete our first Get api with dynamic data

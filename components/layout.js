@@ -3,7 +3,7 @@ import CameraComponent from "./CameraComponent"
 export default function Layout({ children }) {
     return (
         <>
-            <CameraComponent />
+            {/* <CameraComponent /> */}
             <main>{children}</main>
         </>
     )
