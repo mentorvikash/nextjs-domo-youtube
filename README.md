@@ -25,3 +25,9 @@ This is next.js tutorial and to what we had convered in different days, you can 
 #### day2-client-side+server-side-rendering
 
 - Will see how implement server side rendering with client side rendering.
+
+#### day3-create-api
+
+- First create api folder in pages folder
+- Then as per file base routing you can creat your apis
+- This section includes api for CRUD operation
