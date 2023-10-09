@@ -39,6 +39,7 @@ function HomePage() {
         }}
       >
         <button
+          className="btn btn-primary"
           style={{ alignSelf: "center" }}
           onClick={() => index > 0 && setIndex((prev) => prev - 1)}
         >
@@ -68,6 +69,7 @@ function HomePage() {
           </div>
         </div>
         <button
+          className="btn btn-primary"
           style={{ alignSelf: "center" }}
           onClick={() =>
             index != information.length - 1 && setIndex((prev) => prev + 1)

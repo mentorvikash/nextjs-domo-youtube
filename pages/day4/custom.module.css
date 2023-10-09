@@ -1,0 +1,15 @@
+.heading1 {
+  color: blueviolet;
+}
+
+.heading2 {
+  color: brown;
+}
+
+.button1 {
+  padding: 10px;
+  border: 0 solid black;
+  border-radius: 10px;
+  background-color: darkgray;
+  font-weight: 600;
+}
