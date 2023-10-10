@@ -6,7 +6,11 @@ function HomePage() {
   const [index, setIndex] = useState(0);
 
   const information = [
-    "SWR is a data fetching library used to do everything Related api handeling"];
+    "Styling in Nextjs | 3 Types",
+    "Global Stylings",
+    "Module Stylings",
+    "Scss Stylings",
+  ];
 
   useEffect(() => {
     console.log("infolen", information.length);
