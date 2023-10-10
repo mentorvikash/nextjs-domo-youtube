@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/router';
+import Footer from '../comment/layout/footer';
+
+
 
 function Index({ todoData }) {
 
@@ -61,3 +64,14 @@ export const getServerSideProps = async (context) => {
 }
 
 // we had successfully implemented both client side and server side rendering together
+
+
+
+Index.getLayout = function PageLayout(page) {
+    return (
+        <>
+            {page}
+            <Footer />
+        </>
+    )
+}
