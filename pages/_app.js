@@ -26,4 +26,25 @@ export default function App({ Component, pageProps }) {
       <Footer />
     </ThemeProvider>
   )
+<<<<<<< Updated upstream
+  return <Component {...pageProps} />
+=======
+
+  // by using this method we can create special layout for each page
+  // if (Component.getLayout) {
+  //   return Component.getLayout(<Component {...pageProps} />)
+  // }
+
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />)
+  }
+
+  return (
+    <ThemeProvider theme={theme} >
+      <Header />
+      <Layout><Component {...pageProps} /></Layout>
+      <Footer />
+    </ThemeProvider>
+  )
+>>>>>>> Stashed changes
 }
